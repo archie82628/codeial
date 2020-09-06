@@ -1,0 +1,220 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+/* CENTRE HEADING */
+#page-heading{
+    text-align: center;
+    font-size: 3.5rem;
+    font-family:    "Allerta Stencil", Sans-serif;
+    color:rgb(68, 68, 68);
+}
+
+
+/* HORIZONTAL LINE CSS */
+#header-border{
+    border-bottom: 1px solid rgb(187, 186, 186);
+    margin-top: -30px;
+}
+
+/* DESCRIPTION */
+#desc-heading{
+    font-family: sans-serif;
+    margin-left: 30px;
+}
+#description{
+    
+    border:1px solid transparent;
+}
+#description:hover{
+    background-color:rgb(240, 240, 240) ;
+}
+#todo-form textarea{
+     border:none;
+    outline: none; 
+    margin-top: -10px;
+    margin-left: 27px;
+    font-size: 20px;
+    color: rgb(73, 73, 73);
+    font-weight: 100;
+    font-family: sans-serif;
+    background-color: transparent;
+}
+::placeholder{
+    font-size: 1.2rem;
+}
+
+
+/* HORIZONTAL LINE CSS */
+#horiz-border{
+    border-bottom: 1px solid rgb(187, 186, 186);
+}
+
+/* CATEGORY AND DATE SECTION */
+#category-date{
+    display: flex;
+    flex-direction: row;
+    height: 110px;
+}
+
+
+/* CATEGORY AREA */
+#todo-form select{
+    border:none;
+    outline: none;
+    margin-left: 27px;
+    font-size: 1.2rem;
+    background-color: transparent;
+    width:250px;
+}
+#set-category h4{
+    font-family: sans-serif;
+    margin-left: 30px;
+}
+#set-category{
+    border-right: 1px solid rgb(187, 186, 186);
+    width:50%;
+    height: 111px;
+}
+#set-category:hover{
+    background-color: rgb(240, 240, 240);
+}
+
+
+/* DATE AREA */
+#set-date{
+    width:50%;
+   
+}
+#set-date:hover{
+    background-color: rgb(240, 240, 240);
+}
+#set-date h4{
+    font-family: sans-serif;
+    margin-top: 12px;
+    margin-left: 10px;
+}
+#set-date input{
+    border:none;
+    outline: none;
+    margin-left: 10px;
+    font-size: 1.6rem;
+    background-color: transparent;
+}
+
+
+/* ADD AND DELETE BUTTONS */
+#buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 35px;
+   
+}
+
+/* ADD BUTTON */
+#buttons #add{
+    background-color: rgb(63, 63, 63);
+    border:none;
+    color:white;
+    height: 60px;
+    width:220px;
+    font-size:1.5rem;
+  cursor:pointer;
+}
+
+/* DELETE BUTTON */
+#buttons #delete{
+    background-color: rgb(224, 9, 9);
+    border:none;
+    color:white;
+    height: 60px;
+    width:220px;
+    font-size:1.5rem;
+   cursor:pointer; margin-left: 10px;
+}
+
+
+/* LIST OF THE TASKS ADDED */
+#todo-list-container{
+    width:90%;
+    margin-left: 40px;
+}
+.tasks-details input:checked + #text_one  {
+    text-decoration: line-through;
+    text-decoration-color: rgb(202, 202, 202);
+    color:rgb(202, 202, 202);
+    text-decoration-thickness: 2px;
+}
+
+.details{
+    display: flex;
+    flex-direction: row;
+   
+}
+.tasks-details p{
+    margin-top: -20px;
+    margin-left: 20px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    overflow: hidden;
+}
+
+/* TASK DESCRIPTION */
+#text_one{
+    font-weight: 600;
+    font-size: 1.26rem;
+    color:rgb(65, 65, 65);
+}
+
+/* TASK DATE */
+#text_two{
+    font-weight: 540;
+    font-size: 1.3rem;
+}
+
+/* TASK CATEGORY */
+.badge{
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 12px;
+    height: 40px;
+    width: 80px;
+    color: white;
+    background-color: rgb(255, 138, 5);
+    border-radius: 3px;
+    margin-top: 10px;
+    height: 30px;
+    width: 100px;
+    position: absolute;
+    margin-left: 80%;
+  }
+
+
+/* badge colors */
+.category-work{
+    background-color: green;
+  }
+  .category-personal{
+    background-color:purple;
+  }
+  .category-school{
+    background-color: #9b063f;;
+  }
+  .category-cleaning{
+    background-color: rgb(67, 67, 129);
+  }
+
+
+/* TASKS PARTITION LINE */
+.partition{
+    border-bottom: 1px solid rgb(187, 186, 186);
+    margin-bottom: 15px;
+    width:100%;
+}
+
+
+
+

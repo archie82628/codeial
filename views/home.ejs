@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel = "stylesheet" href = "/css/home.css">
+        <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+        <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Lobster">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+
+            <!-- CENTRE HEADING -->
+               <header>
+              <h1 id = "page-heading"> TODO App </h1>
+              </header>
+               
+              <!-- FOR HORIZONTAL LINE -->
+              <div id =header-border></div>
+               
+
+              <!-- FORM FOR ADDING TASKS-->
+            <form id = "todo-form" action="/add-task" method="POST"> 
+
+                <!-- DESCRIPTION AREA -->
+                <div id="description">
+
+                <h4 id = "desc-heading"> DESCRIPTION </h4>
+               
+                <textarea name = "description" placeholder="What do you need to do?" rows="3" cols="130" required ></textarea> 
+                
+            </div>   
+                 
+            <!-- HORIZONTAL LINE PARTITION -->
+                <div id =horiz-border></div>
+
+                <!-- CATEGORY AND DATE SECTION -->
+                   <div id="category-date">
+                 
+
+                    <!-- CATEGORY AREA -->
+                  <div id ="set-category">
+
+                   <h4 id="category">CATEGORY</h4>
+
+                   <select name="category" required>
+
+                       <option >Choose a Category</option>
+                       <option >Personal</option>
+                       <option>School</option>
+                       <option>Cleaning</option>
+                       <option>Work</option>
+                       <option>Other</option>
+
+                   </select>
+
+                   </div>
+                  
+
+                   <!-- DATE AREA -->
+                   <div id="set-date">
+                       <h4 id = "date">DUE DATE</h4>
+                       <input type="date" name="date"  required>
+                   </div>
+
+                </div>
+
+                <!-- HORIZONTAL LINE PARTITION -->
+                <div id =horiz-border></div>
+               
+                <!-- ADD AND DELETE BUTTONS -->
+                <div id="buttons">
+                    
+                    <!-- ADD BUTTON -->
+                    <button id="add"><i class="fa fa-plus" aria-hidden="true"></i> &nbsp;&nbsp;ADD TASK</button>
+                   
+                    <!-- DELETE BUTTON -->
+                    <button id="delete" type="submit" form="delete-form" style="cursor: pointer;">
+                        <i class="fa fa-trash" aria-hidden="true"></i> 
+                        &nbsp;
+                        DELETE TASK
+                    </button>
+                       </a>
+                </div>
+                
+            </form>
+            
+            <!-- HORIZONTAL LINE PARTITION -->
+            <div id =horiz-border></div>
+
+            <!-- LIST OF TASKS ADDED -->
+            <form action="/delete-task" method="POST" id="delete-form" name="delete-task" >
+            <div id = "todo-list-container">
+                <ul>
+                    <% for(var i of todo_list){ %>
+                            
+                            <!-- MAIN DIV OF TASKS ADDED -->
+                            <div class = "details">
+                                  
+                                <!-- DIV OF DESCRIPTION AND DATE -->
+                            <div class="tasks-details">
+                                <input type="checkbox" id="myCheck" name="<%= i.id %>">
+                            <p id="text_one"> <%= i.description %> </p>
+                           
+                            <p  id="text_two"> <i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;<%= i.date %> </p>
+                        </div>
+                           
+                        <!-- DIV OF CATEGORY -->
+                            <div class="category-<%= i.category %> badge">
+                             <%= i.category %> 
+                          </div>
+
+                            </div>
+
+                            <!-- TASKS PARTITION -->
+                        <div class="partition"></div>
+
+                        <% } %>
+                </ul>
+            </div>
+          </form>
+
+                 <!-- EXTERNAL SCRIPT FILE -->
+                    <script src="/js/home.js"></script>
+        </main>
+       
+        
+    </body>
+</html>
